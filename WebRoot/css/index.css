@@ -1,0 +1,29 @@
+.back{background: cadetblue;}
+
+.top{height: 130px}
+.top1{height:650px}
+.left{height:650px}
+.right{height:100%}
+.back1{background: #4CAE4C;}
+.back2{background: #E7E7E7;}
+.back3{background: #D0E9C6; height: 40px;}
+.image{width:55px;
+height:35px;
+background:url(../img/all_icon.png) 25px -230px no-repeat;}
+.image2{width:55px;
+height:35px;
+background:url(../img/all_icon.png) -460px -210px no-repeat;}
+.image3{
+float: none;
+margin: 0px 0px 0px 0px;
+width:50px;
+height:35px;
+border:0;
+outline: none;
+background:url(../img/all_icon.png) 10px -235px no-repeat;}
+.image4{
+float: none;
+margin: 0px 0px 0px 10px;
+width:50px;
+height:35px;
+background:url(../img/all_icon.png) -470px -223px no-repeat;}

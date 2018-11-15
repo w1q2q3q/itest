@@ -1,0 +1,48 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+<hibernate-mapping>  
+    <class name="com.itest.entity.Interface" table="jiekou_list">  
+        <!-- 采用uuid生成主键 这里要指定type为string类型 -->  
+        <id name="id" column="id" type="string">  
+            <generator class="uuid"></generator>  
+        </id>  
+  
+        <!-- 像类似这样的name属性 都是指类里面的成员变量 column指数据库中对应的字段名-->  
+        <property name="name" column="name" type="string"></property> 
+        <property name="describe1" column="describe1" type="string"></property> 
+        <property name="url" column="url" type="string"></property> 
+        <property name="select1" column="select1" type="string"></property> 
+    
+  
+        <!-- 设置级联为 cascade="all"-->  
+        <list name="herder" table="herde_list" cascade="all">  
+            <!-- 维护对方的外键 -->  
+            <key column="team_id"></key>  
+            <!-- index标签表示多的一方 对应一的一方的索引位置   
+                column属性表示数据库中存放数据的字段  
+                index为关键字 避免跟关键字冲突 使用`index` 或 [index]  
+            -->  
+            <index column="[index]" type="string"></index>  
+            <!-- 建立一对多的关联 -->  
+            <one-to-many class="com.itest.entity.herder" />  
+        </list> 
+         
+             <!-- 设置级联为 cascade="all"-->  
+        <list name="value" table="value_list" cascade="all">  
+            <!-- 维护对方的外键 -->  
+            <key column="team_id"></key>  
+            <!-- index标签表示多的一方 对应一的一方的索引位置   
+                column属性表示数据库中存放数据的字段  
+                index为关键字 避免跟关键字冲突 使用`index` 或 [index]  
+            -->  
+            <index column="[index]" type="string"></index>  
+            <!-- 建立一对多的关联 -->  
+            <one-to-many class="com.itest.entity.value" />  
+        </list>
+        
+        
+    </class>  
+</hibernate-mapping>  

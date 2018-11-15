@@ -1,0 +1,31 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+<hibernate-mapping>  
+    <class name="com.itest.entity.JobEntity" table="JobEntity">  
+        <!-- 采用uuid生成主键 这里要指定type为string类型 -->  
+        <id name="jobId" column="jobId" type="int">  
+            <generator class="native"></generator>  
+        </id>  
+  
+        <!-- 像类似这样的name属性 都是指类里面的成员变量 column指数据库中对应的字段名--> 
+        <property name="jobGroup" column="jobGroup" type="string"></property>
+        <property name="zhu" column="zhu" type="string"></property>
+        <property name="jobName" column="jobName" type="string"></property>
+        <property name="triggerName" column="triggerName" type="string"></property>
+        <property name="triggerGroupName" column="triggerGroupName" type="string"></property>
+        <property name="cronExpr" column="cronExpr" type="string"></property>
+        <property name="previousFireTime" column="previousFireTime" type="date"></property>
+        <property name="nextFireTime" column="nextFireTime" type="date"></property>
+        <property name="jobStatus" column="jobStatus" type="string"></property>
+        <property name="runTimes" column="runTimes" type="java.lang.Long"></property>
+        <property name="duration" column="duration" type="java.lang.Long"></property>
+        <property name="startTime" column="startTime" type="date"></property>
+        <property name="endTime" column="endTime" type="date"></property>
+        <property name="jobClass" column="jobClass" type="string"></property>
+        <property name="count" column="count" type="int"></property>
+        
+    </class>  
+</hibernate-mapping>  

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+<hibernate-mapping>  
+    <class name="com.itest.entity.addylassert" table="addylassert">  
+        <id name="ID" column="id" type="int">  
+            <generator class="increment"></generator>  
+        </id>  
+        <property name="responseid" column="responseid" type="int"></property> 
+        <property name="attribute" column="attribute" type="string"></property>  
+        <property name="compare" column="compare" type="int"></property>
+        <property name="value" column="value" type="string"></property>     
+        <!-- 因为list中的value 不是原始类型 所以要指定其类型 -->  
+        <!-- 建立多对一关联映射关系 column="team_id"表示team这张表通过该字段  
+             和student表关联 -->  
+        <many-to-one name="team" column="team_id" 
+            class="com.itest.entity.addyl">  
+        </many-to-one>  
+    </class>  
+</hibernate-mapping>  

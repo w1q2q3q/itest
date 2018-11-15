@@ -1,0 +1,17 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+<hibernate-mapping>  
+    <class name="com.itest.entity.zhu" table="zhu">  
+  
+        <id name="id" column="id" type="int">  
+            <generator class="native"></generator>  
+        </id>    
+        <property name="zname" column="zname" type="string"></property>  
+        <property name="zdescribev" column="zdescribev" type="string"></property>  
+        <property name="date" column="date" type="string"></property>
+        <property name="number" column="number" type="int" ></property> 
+    </class>  
+</hibernate-mapping>  
